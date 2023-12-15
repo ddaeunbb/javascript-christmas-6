@@ -1,7 +1,8 @@
+import OutputView from '../view/OutputView';
 import MenuBoard from '../domain/MenuBoard';
 import Calendar from '../domain/Calendar';
 import InputView from '../view/InputView';
-import { strMenuTostrArrMenu } from '../convertor/Convertor';
+import { strMenuTostrArrMenu, menuSplitWithCount } from '../convertor/Convertor';
 
 class PromotionController {
   #calendar;
@@ -14,7 +15,9 @@ class PromotionController {
 
   async orderMenu() {
     const orderedMenu = await InputView.readMenu();
-    this.#menuBoard = new MenuBoard(strMenuTostrArrMenu(orderedMenu));
+    const menuList = strMenuTostrArrMenu(orderedMenu);
+    this.#menuBoard = new MenuBoard(menuList);
+    OutputView.printMenu(menuSplitWithCount(menuList));
   }
 }
 
