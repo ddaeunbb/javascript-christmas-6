@@ -1,5 +1,11 @@
+import PromotionController from './controller/PromotionController';
+
 class App {
-  async run() {}
+  #controller = new PromotionController();
+
+  async run() {
+    await this.#controller.reserveDate();
+  }
 }
 
 export default App;
