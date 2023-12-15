@@ -3,10 +3,12 @@ import MenuBoard from '../domain/MenuBoard';
 import Calendar from '../domain/Calendar';
 import InputView from '../view/InputView';
 import { strMenuTostrArrMenu, menuSplitWithCount } from '../convertor/Convertor';
+import Calculator from '../domain/Calculator';
 
 class PromotionController {
   #calendar;
   #menuBoard;
+  #calculator = new Calculator();
 
   async reserveDate() {
     const reservedDate = await InputView.readDate();
@@ -22,7 +24,14 @@ class PromotionController {
     OutputView.printTotalCost(totalCost);
   }
 
-
+  issueReceipt() {
+    const { dessert, main } = this.#menuBoard.calculateMainAndDessert();
+    const gift = this.#menuBoard.calculateReceiveGift();
+    const totalDiscount = this.#calendar.calculateTotalDiscount(dessert, main, gift);
+    const discountSum = this.#calculator.calculateDiscountSum(totalDiscount);
+    if(discountSum === 0) OutputView.printNone();
+    else OutputView.printTotalDiscount(totalDiscount);
+  }
 }
 
 export default PromotionController;

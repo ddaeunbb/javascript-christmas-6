@@ -4,6 +4,11 @@ export const OUPUT_MESSAGE = Object.freeze({
   printGift: `<증정 메뉴>\n`,
   printChampagne: '샴페인 1개',
   printNone: '없음',
+  printChristmas: `크리스마스 디데이 할인: `,
+  printWeek: `평일 할인: `,
+  printWeekend: `주말 할인: `,
+  printSpecial: `특별 할인: `,
+  printGiftDiscount : `증정 이벤트`,
 });
 
 export const INPUT_MESSAGE = Object.freeze({

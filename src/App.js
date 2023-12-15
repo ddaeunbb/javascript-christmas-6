@@ -8,6 +8,7 @@ class App {
     try{
       await this.#controller.reserveDate();
       await this.#controller.orderMenu();
+      this.#controller.issueReceipt();
     } catch (error) {
       Console.print(error.message);
     }
