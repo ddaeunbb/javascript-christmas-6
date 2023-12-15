@@ -1,10 +1,16 @@
+import { Console } from '@woowacourse/mission-utils';
 import PromotionController from './controller/PromotionController';
 
 class App {
   #controller = new PromotionController();
 
   async run() {
-    await this.#controller.reserveDate();
+    try{
+      await this.#controller.reserveDate();
+      await this.#controller.orderMenu();
+    } catch (error) {
+      Console.print(error.message);
+    }
   }
 }
 
