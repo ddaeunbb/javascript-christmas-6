@@ -18,7 +18,11 @@ class PromotionController {
     const menuList = strMenuTostrArrMenu(orderedMenu);
     this.#menuBoard = new MenuBoard(menuList);
     OutputView.printMenu(menuSplitWithCount(menuList));
+    const totalCost = this.#menuBoard.calculateTotalCost();
+    OutputView.printTotalCost(totalCost);
   }
+
+
 }
 
 export default PromotionController;

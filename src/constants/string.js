@@ -5,4 +5,5 @@ export const SYMBOL = Object.freeze({
 
 export const UNIT = Object.freeze({
   count: '개',
+  won: '원',
 });

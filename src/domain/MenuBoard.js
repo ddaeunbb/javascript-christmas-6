@@ -1,3 +1,4 @@
+import { MENU_BOARD } from '../constants/menu';
 import MenuListValidator from '../validation/MenuListValidator';
 import { menuSplitWithCount } from '../convertor/Convertor';
 /**
@@ -10,6 +11,14 @@ class MenuBoard {
   constructor(menuList) {
     MenuListValidator.validateMenuList(menuList);
     this.#menuList = menuSplitWithCount(menuList);
+  }
+
+  calculateTotalCost() {
+    let cost = 0;
+    this.#menuList.forEach(([menu, count]) => {
+      cost += MENU_BOARD[menu] * Number(count);
+    })
+    return cost;
   }
 }
 
