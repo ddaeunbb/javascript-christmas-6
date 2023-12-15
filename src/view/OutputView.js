@@ -21,6 +21,7 @@ const OutputView = Object.freeze({
     },
 
     printTotalDiscount(totalDiscount) {
+        Console.print(OUPUT_MESSAGE.printBenefit);
         totalDiscount.forEach((val, key) => {
             const valWithComma = numWithThousandComma(val);
             if(key === 'christmas' && val > 0) Console.print(`${OUPUT_MESSAGE.printChristmas}${valWithComma}${UNIT.won}`);
@@ -32,7 +33,12 @@ const OutputView = Object.freeze({
     },
 
     printNone() {
+        Console.print(OUPUT_MESSAGE.printBenefit);
         Console.print(OUPUT_MESSAGE.printNone);
+    },
+
+    printTotalDiscountSum(discountSum) {
+        Console.print(`${OUPUT_MESSAGE.printTotalDiscountSum}${numWithThousandComma(discountSum)}${UNIT.won}`)
     }
 });
 

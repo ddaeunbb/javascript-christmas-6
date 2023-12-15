@@ -7,6 +7,8 @@ class Calculator {
     this.#discountSum = sum;
     return sum;
   }
+
+  
 }
 
 export default Calculator;

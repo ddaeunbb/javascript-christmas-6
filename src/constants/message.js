@@ -9,6 +9,8 @@ export const OUPUT_MESSAGE = Object.freeze({
   printWeekend: `주말 할인: `,
   printSpecial: `특별 할인: `,
   printGiftDiscount : `증정 이벤트`,
+  printTotalDiscountSum: `<총혜택 금액>\n`,
+  printBenefit: `<혜택 내역>\n`,
 });
 
 export const INPUT_MESSAGE = Object.freeze({

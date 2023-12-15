@@ -31,6 +31,11 @@ class PromotionController {
     const discountSum = this.#calculator.calculateDiscountSum(totalDiscount);
     if(discountSum === 0) OutputView.printNone();
     else OutputView.printTotalDiscount(totalDiscount);
+    OutputView.printTotalDiscountSum(discountSum);
+  }
+
+  calculateTotalCost() {
+    
   }
 }
 
