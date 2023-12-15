@@ -12,8 +12,11 @@ const OutputView = Object.freeze({
 
     printTotalCost(cost) {
         Console.print(OUPUT_MESSAGE.printTotalCost);
-        Console.print(`${cost}${UNIT.won}`);
-    }
+        Console.print(`${cost}${UNIT.won}\n`);
+        Console.print(OUPUT_MESSAGE.printGift);
+        if(cost >= 120000) Console.print(OUPUT_MESSAGE.printChampagne)
+        else Console.print(OUPUT_MESSAGE.printNone);
+    },
 });
 
 export default OutputView;

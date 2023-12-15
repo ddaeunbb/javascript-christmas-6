@@ -1,6 +1,9 @@
 export const OUPUT_MESSAGE = Object.freeze({
   printMenu: `12월 26일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n\n<주문 메뉴>`,
-  printTotalCost: `<할인 전 총주문 금액>\n`
+  printTotalCost: `<할인 전 총주문 금액>\n`,
+  printGift: `<증정 메뉴>\n`,
+  printChampagne: '샴페인 1개',
+  printNone: '없음',
 });
 
 export const INPUT_MESSAGE = Object.freeze({
